@@ -16,7 +16,7 @@ const profileRoutes = {
 const allRoutes = [
   {
     path: '/',
-    component: () => import('@commons/layout/layout'),
+    // component: () => import('@commons/layout/layout'),
     children: [...routers, profileRoutes],
   },
   ...staticRoutes,

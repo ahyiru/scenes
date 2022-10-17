@@ -129,8 +129,8 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
-    "@huxy/components": "^1.5.3",
-    "@huxy/layout": "^1.5.1",
+    "@huxy/components": "^1.5.5",
+    "@huxy/layout": "^1.5.2",
     "@huxy/router": "^1.5.1",
     "@huxy/use": "^1.5.1",
     "@huxy/utils": "^1.5.2",

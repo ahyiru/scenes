@@ -20,9 +20,9 @@ specifiers:
   '@babel/runtime': ^7.19.4
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
-  '@huxy/components': ^1.5.3
+  '@huxy/components': ^1.5.5
   '@huxy/copy-file-webpack-plugin': ^0.3.0
-  '@huxy/layout': ^1.5.1
+  '@huxy/layout': ^1.5.2
   '@huxy/open-browser-webpack-plugin': ^0.3.0
   '@huxy/router': ^1.5.1
   '@huxy/use': ^1.5.1
@@ -91,8 +91,8 @@ specifiers:
   workbox-webpack-plugin: ^6.5.4
 
 dependencies:
-  '@huxy/components': 1.5.3_biqbaboplfbrettd7655fr4n2y
-  '@huxy/layout': 1.5.1_react@18.2.0
+  '@huxy/components': 1.5.5_biqbaboplfbrettd7655fr4n2y
+  '@huxy/layout': 1.5.2_react@18.2.0
   '@huxy/router': 1.5.1_react@18.2.0
   '@huxy/use': 1.5.1_react@18.2.0
   '@huxy/utils': 1.5.2
@@ -1950,8 +1950,8 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /@huxy/components/1.5.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-T86PZzITTmzwYZcc+2vU688zk8y9p8I5dQXPA65I/o8qQ30LCNdNdX2nsfzpn5mPXUd5oskOZwAJtGoMFirMDg==}
+  /@huxy/components/1.5.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-cbfUr+tPA/TQR0XYLWlSInNYeHWQy2LtDRQZyIKkAhmBOEZMJBeI3dUmI9ixRcbzDNu2BfHENNChSkVXtcU05w==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -1964,8 +1964,8 @@ packages:
     resolution: {integrity: sha512-0HyLY6rdkgb3g/FEJz2+wSV/PuPNbfMXZDANN5M9N1jyL4Q1Tw9Ryaw/+CG522f9MJRD3SFyR9I3CIQ00i19zg==}
     dev: true
 
-  /@huxy/layout/1.5.1_react@18.2.0:
-    resolution: {integrity: sha512-sl9LCTvphCoh6sCPp0251i1RRFd2TRmWPz2ueS/8NSIoxs1QlwCnQUX1GsfnNEwENqUBY851j8U9GEBQ/7AEFg==}
+  /@huxy/layout/1.5.2_react@18.2.0:
+    resolution: {integrity: sha512-Bj7Q7cF0XtRdHIb8CALVMYYhaWbbPgMZiV9BKkNRpY0JtAcdq6v6Mx4xGsuTYY40N676HRAaHPcMFcm5FhHogw==}
     peerDependencies:
       react: '>=17.0.0'
     dependencies:

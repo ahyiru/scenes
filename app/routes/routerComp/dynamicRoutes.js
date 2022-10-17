@@ -1,49 +1,52 @@
 export const demoRoutes = {
+  path: '/list',
+  name: 'list',
+  icon: 'ico-flag',
+  hideMenu: true,
+  component: () => import('@app/views/list'),
+};
+
+export const webglRoutes = {
   path: '/webgl',
   name: 'webgl',
   icon: 'ico-flag',
   children: [
     {
-      path: '/demo',
-      name: 'demo',
-      component: props => <h1>three.js demo</h1>,
-    },
-    {
-      path: '/street',
-      name: 'street',
-      redirect: '/webgl-street',
+      path: '/webgl-street',
+      name: 'webgl-street',
+      component: () => import('@app/views/webgl/street'),
       linkProps: {
         target: '_blank',
       },
     },
     {
-      path: '/room',
-      name: 'room',
-      redirect: '/webgl-room',
+      path: '/webgl-room',
+      name: 'webgl-room',
+      component: () => import('@app/views/webgl/room'),
       linkProps: {
         target: '_blank',
       },
     },
     {
-      path: '/city',
-      name: 'city',
-      redirect: '/webgl-city',
+      path: '/webgl-city',
+      name: 'webgl-city',
+      component: () => import('@app/views/webgl/city'),
       linkProps: {
         target: '_blank',
       },
     },
     {
-      path: '/house',
-      name: 'house',
-      redirect: '/webgl-house',
+      path: '/webgl-house',
+      name: 'webgl-house',
+      component: () => import('@app/views/webgl/house'),
       linkProps: {
         target: '_blank',
       },
     },
     {
-      path: '/car',
-      name: 'car',
-      redirect: '/webgl-car',
+      path: '/webgl-car',
+      name: 'webgl-car',
+      component: () => import('@app/views/webgl/car'),
       linkProps: {
         target: '_blank',
       },
