@@ -1,0 +1,40 @@
+.webgl-house-page {
+  position: relative;
+  &:hover {
+    .switch-bar {
+      visibility: visible;
+    }
+  }
+  .switch-bar {
+    visibility: hidden;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        flex: 1;
+        i {
+          font-size: 24px;
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          cursor: pointer;
+          border-radius: 20px;
+          color: #fff;
+          background: rgba(0, 0, 0, .06);
+          &:hover {
+            background: rgba(0, 0, 0, .09);
+          }
+        }
+        &:not(:last-of-type) {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
