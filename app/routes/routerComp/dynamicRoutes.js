@@ -1,9 +1,9 @@
 const demoRoutes = {
-  path: '/list',
-  name: 'list',
+  path: '/layout',
+  name: 'layout',
   icon: 'ico-flag',
   hideMenu: true,
-  component: () => import('@app/views/list'),
+  component: () => import('@app/views/layout'),
 };
 
 const profileRoutes = {

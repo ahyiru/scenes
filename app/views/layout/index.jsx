@@ -2,7 +2,7 @@ import {useRoute, Link} from '@huxy/router';
 
 import {Tree} from '@huxy/components';
 
-import Fish from '@app/views/webgl/src/fish';
+import Fish from '../webgl/src/fish';
 
 import './index.less';
 
