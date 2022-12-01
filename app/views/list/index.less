@@ -1,6 +1,8 @@
-.menu-list {
+.nav-list-page {
+  height: 100vh;
+  position: relative;
   a {
-    color: #444;
+    color: #f0f0f0;
     font-weight: 500;
     &:hover {
       color: var(--blue1);
@@ -8,5 +10,14 @@
     &.active {
       color: var(--blue2);
     }
+  }
+  .nav-list {
+    backdrop-filter: blur(0.3rem);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    background: hsla(0, 0%, 100%, 0.1);
   }
 }

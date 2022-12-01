@@ -12,6 +12,7 @@ import Input from '@app/components/base/input';
 import Button from '@app/components/base/button';
 import Radio from '@app/components/base/radio';
 import Select from '@app/components/base/select';
+import report from '@app/apis/report/report';
 
 const delay = 500;
 
@@ -61,7 +62,7 @@ const Index = props => {
   const [menuType, setMenuType] = useMenuTypeStore('vertical');
 
   const [active, setActive] = useState('layout');
-  const [visible, setVisible] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const [size, setSize] = useState(10);
   const changeFontSize = useDebounce(value => document.documentElement.style.setProperty('--rootSize', value), delay);
@@ -80,38 +81,80 @@ const Index = props => {
 
   const saveConfig = () => {
     changeLayout(theme.list, true);
-    setVisible(false);
+    setOpen(false);
+    report({
+      actionType: 'click',
+      category: 'settings',
+      text: '保存配置',
+      value: 'saveConfig',
+    });
   };
   const copyConfig = () => {
     copyToClipboard(JSON.stringify(theme.list));
-    setVisible(false);
+    setOpen(false);
     message.success(i18nCfg.copy_cfg_msg);
+    report({
+      actionType: 'click',
+      category: 'settings',
+      text: '拷贝配置',
+      value: 'copyConfig',
+    });
   };
 
   const changeFont = value => {
     setSize(value);
     changeFontSize(`${(value * 100) / 16}%`);
+    report({
+      actionType: 'change',
+      category: 'settings',
+      text: value,
+      value: 'fontSize',
+    });
   };
   const selectTheme = current => {
     storage.set('theme', current);
     setTheme(current);
+    report({
+      actionType: 'click',
+      category: 'settings',
+      text: current.name,
+      value: 'switchTheme',
+    });
   };
 
   const changeSizes = (key, value, unit) => {
     // e.persist();
     theme.list.sizes[key] = `${value || ''}${unit}`;
     changeLayout(theme.list);
+    report({
+      actionType: 'change',
+      category: 'settings',
+      text: `${value || ''}${unit}`,
+      value: key,
+    });
   };
   const changeUnit = (key, unit) => {
     const value = unit === 'px' ? 1200 : 100;
     theme.list.sizes[key] = `${value}${unit}`;
     changeLayout(theme.list);
+    report({
+      actionType: 'change',
+      category: 'settings',
+      text: `${value}${unit}`,
+      value: key,
+    });
   };
 
   const changeColors = (e, key) => {
     const {value} = e.target;
     theme.list.colors[key] = value;
     changeLayout(theme.list);
+    report({
+      actionType: 'change',
+      category: 'settings',
+      text: value,
+      value: key,
+    });
   };
 
   const comps = {
@@ -122,7 +165,15 @@ const Index = props => {
           <Radio
             style={{marginTop: '5px'}}
             value={menuType}
-            onChange={value => setMenuType(value)}
+            onChange={value => {
+              setMenuType(value);
+              report({
+                actionType: 'click',
+                category: 'settings',
+                text: value,
+                value: 'switchMenuType',
+              });
+            }}
             options={[
               {value: 'vertical', label: getIntls('main.layout.vertical')},
               {value: 'horizontal', label: getIntls('main.layout.horizontal')},
@@ -132,7 +183,9 @@ const Index = props => {
         </div>
         <div className="vertical-item">
           <label>{i18nCfg.fontSize}</label>
-          <Input type="range" min={6} max={16} value={size} onChange={e => changeFont(e.target.value)} />
+          <div>
+            <Input type="range" min={6} max={16} value={size} onChange={e => changeFont(e.target.value)} />
+          </div>
         </div>
         <Row className="select-item">
           {getThemeList(getIntls).map(item => (
@@ -174,12 +227,12 @@ const Index = props => {
 
   return (
     <>
-      <a className={visible ? 'active' : ''} onClick={e => setVisible(true)}>
+      <a className={open ? 'active' : ''} onClick={e => setOpen(true)}>
         <span className="ico-block" />
       </a>
       <Drawer
-        close={() => setVisible(false)}
-        open={visible}
+        close={() => setOpen(false)}
+        open={open}
         className="configs-drawer"
         width="300px"
         header={

@@ -11,10 +11,10 @@ const Index = props => {
   }, []);
   return <div className="webgl-street-page">
     <div className="tips-bar">
-      <span>Up - move forwards</span>
-      <span>Down - move backwards</span>
-      <span>Right - rotate right</span>
-      <span>Left - rotate left</span>
+      <span>Up - 前进</span>
+      <span>Down - 后退</span>
+      <span>Right - 向右</span>
+      <span>Left - 向左</span>
     </div>
     <div ref={mountDom} />
   </div>;

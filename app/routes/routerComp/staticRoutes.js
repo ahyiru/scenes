@@ -1,4 +1,5 @@
 import userRoutes from '@app/views/user/routes';
+import webglRoutes from '@app/views/webgl/routes';
 
 const routes = [
   ...userRoutes,
@@ -8,6 +9,7 @@ const routes = [
     component: import('@app/views/404'),
     hideMenu: true,
   },
+  ...webglRoutes,
 ];
 
 export default routes;

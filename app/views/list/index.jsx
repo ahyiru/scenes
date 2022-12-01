@@ -1,14 +1,19 @@
 import {useRoute, Link} from '@huxy/router';
 
-import {Menu} from '@huxy/components';
+import {Tree} from '@huxy/components';
+
+import Fish from '@app/views/webgl/src/fish';
 
 import './index.less';
 
 const List = props => {
   const {menu} = useRoute();
   return (
-    <div className="menu-list">
-      <Menu menu={menu} Link={Link} bgColor="rgba(0, 0, 0, 0.02)" />
+    <div className="nav-list-page">
+      <Fish />
+      <div className="nav-list">
+        <Tree data={menu} Link={Link} />
+      </div>
     </div>
   );
 };

@@ -1,23 +1,15 @@
 import {traverItem} from '@huxy/utils';
 
+import Icon from '@app/components/icon';
+
 import staticRoutes from './routerComp/staticRoutes';
-import * as dynamicRoutes from './routerComp/dynamicRoutes';
-
-const routers = Object.keys(dynamicRoutes).map(key => dynamicRoutes[key]);
-
-const profileRoutes = {
-  path: '/profile',
-  name: '个人中心',
-  title: '个人中心',
-  hideMenu: true,
-  component: props => <h1>{<h1>{props.inputPath} is comming...</h1>}</h1>,
-};
+import dynamicRoutes from './routerComp/dynamicRoutes';
 
 const allRoutes = [
   {
     path: '/',
     // component: () => import('@commons/layout/layout'),
-    children: [...routers, profileRoutes],
+    children: dynamicRoutes,
   },
   ...staticRoutes,
 ];
@@ -29,6 +21,7 @@ const routes = (nameList, routerList) =>
       .join('')
       .replace('//', '/');
     item.name = nameList?.[fullPath] ?? item.name;
+    item.icon = item.icon ? <Icon icon={item.icon} /> : item.icon;
     item.id = item.id ?? routerList?.find(route => route.path === fullPath)?._id;
     /* if (typeof item.componentPath === 'string') {
       item.component = () => import(`@app/views${item.componentPath}`);
