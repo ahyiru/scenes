@@ -12,7 +12,7 @@ const List = props => {
     <div className="nav-list-page">
       <Fish />
       <div className="nav-list">
-        <Tree data={menu} Link={Link} />
+        <Tree data={menu} Link={Link} width="100%" />
       </div>
     </div>
   );

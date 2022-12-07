@@ -7,7 +7,7 @@ const router = {
   '/user/setNewPwd': '重置密码',
   '/404': '404',
   '/preview': '预览',
-  '/layout': '框架配置',
+  '/layout': 'Home',
 };
 
 export default router;

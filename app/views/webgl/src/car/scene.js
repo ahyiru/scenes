@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
-import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+import {RGBELoader} from 'three/addons/loaders/RGBELoader.js';
 
 import {getViewportSize} from '@huxy/utils';
 
@@ -79,7 +79,9 @@ const startScene = (areaInfo, mountDom = document.body) => {
 
     const shadow = new THREE.TextureLoader().load(ferrariPng);
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+    // dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+    // dracoLoader.setDecoderPath('three/addons/libs/draco/gltf/');
+    dracoLoader.setDecoderPath('http://ihuxy.com:8081/draco-gltf/');
     const loader = new GLTFLoader();
     loader.setDRACOLoader(dracoLoader);
     loader.load(ferrariGlb, gltf => {
