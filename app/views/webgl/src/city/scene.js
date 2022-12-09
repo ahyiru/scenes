@@ -10,7 +10,7 @@ const deltaMax = 12;
 const deltaMin = 0;
 
 const startScene = (mountDom = document.body) => {
-  const {width, height} = getViewportSize();
+  const {width, height} = getViewportSize(mountDom);
   const renderer = new THREE.WebGLRenderer({antialias: true});
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, width / height, 1, 1100);
@@ -46,7 +46,7 @@ const startScene = (mountDom = document.body) => {
   };
 
   const onResize = () => {
-    const {width, height} = getViewportSize();
+    const {width, height} = getViewportSize(mountDom);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
@@ -82,13 +82,13 @@ const startScene = (mountDom = document.body) => {
   const start = () => {
     setConfigs();
     animate();
-    document.addEventListener('resize', onResize, false);
-    document.addEventListener('mousewheel', onMouseWheel, false);
-    document.addEventListener('DOMMouseScroll', onMouseWheel, false);
+    window.addEventListener('resize', onResize, false);
+    window.addEventListener('mousewheel', onMouseWheel, false);
+    window.addEventListener('DOMMouseScroll', onMouseWheel, false);
     return () => {
-      document.removeEventListener('resize', onResize, false);
-      document.removeEventListener('mousewheel', onMouseWheel, false);
-      document.removeEventListener('DOMMouseScroll', onMouseWheel, false);
+      window.removeEventListener('resize', onResize, false);
+      window.removeEventListener('mousewheel', onMouseWheel, false);
+      window.removeEventListener('DOMMouseScroll', onMouseWheel, false);
     };
   };
   return start();

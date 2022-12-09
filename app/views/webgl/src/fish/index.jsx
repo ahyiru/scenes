@@ -8,7 +8,7 @@ const Index = props => {
     const root = props.mountDom?.current ?? mountDom.current;
     return startScene(root);
   }, []);
-  return <div ref={mountDom} />;
+  return <div ref={mountDom} style={{width: '100%', height: '100%'}} />;
 };
 
 export default Index;

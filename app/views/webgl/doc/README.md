@@ -147,8 +147,8 @@ const startScene = (mountDom = document.body) => {
   const start = () => {
     setConfigs();
     animate();
-    document.addEventListener('resize', onResize, false);
-    return () => document.removeEventListener('resize', onResize, false);
+    window.addEventListener('resize', onResize, false);
+    return () => window.removeEventListener('resize', onResize, false);
   };
   return start();
 };
@@ -255,14 +255,14 @@ const changeZoom = step => {
 const start = () => {
   setConfigs();
   animate();
-  document.addEventListener('resize', onResize, false);
-  document.addEventListener('mousewheel', onMouseWheel, false);
-  document.addEventListener('DOMMouseScroll', onMouseWheel, false);
+  window.addEventListener('resize', onResize, false);
+  window.addEventListener('mousewheel', onMouseWheel, false);
+  window.addEventListener('DOMMouseScroll', onMouseWheel, false);
   return {
     destory: () => {
-      document.removeEventListener('resize', onResize, false);
-      document.removeEventListener('mousewheel', onMouseWheel, false);
-      document.removeEventListener('DOMMouseScroll', onMouseWheel, false);
+      window.removeEventListener('resize', onResize, false);
+      window.removeEventListener('mousewheel', onMouseWheel, false);
+      window.removeEventListener('DOMMouseScroll', onMouseWheel, false);
     },
     changeScene,
     changeZoom,

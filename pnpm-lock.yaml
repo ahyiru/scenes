@@ -23,7 +23,7 @@ specifiers:
   '@huxy/components': ^1.6.9
   '@huxy/copy-file-webpack-plugin': ^0.3.0
   '@huxy/layout': ^1.6.10
-  '@huxy/materials': ^0.0.9
+  '@huxy/materials': ^0.0.10
   '@huxy/open-browser-webpack-plugin': ^0.3.0
   '@huxy/router': ^1.6.3
   '@huxy/use': ^1.6.6
@@ -64,7 +64,7 @@ specifiers:
   postcss-less: ^6.0.0
   postcss-loader: ^7.0.2
   postcss-preset-env: ^7.8.3
-  prettier: ^2.8.0
+  prettier: ^2.8.1
   react: ^18.2.0
   react-dom: ^18.2.0
   react-test-renderer: ^18.2.0
@@ -80,7 +80,7 @@ specifiers:
   three: ^0.147.0
   ts-jest: ^29.0.3
   ts-loader: ^9.4.2
-  typescript: ^4.9.3
+  typescript: ^4.9.4
   url-loader: ^4.1.1
   webpack: ^5.75.0
   webpack-bundle-analyzer: ^4.7.0
@@ -94,7 +94,7 @@ specifiers:
 dependencies:
   '@huxy/components': 1.6.9_biqbaboplfbrettd7655fr4n2y
   '@huxy/layout': 1.6.10_react@18.2.0
-  '@huxy/materials': 0.0.9_react@18.2.0
+  '@huxy/materials': 0.0.10_react@18.2.0
   '@huxy/router': 1.6.3_react@18.2.0
   '@huxy/use': 1.6.6_react@18.2.0
   '@huxy/utils': 1.6.9
@@ -160,7 +160,7 @@ devDependencies:
   postcss-less: 6.0.0_postcss@8.4.19
   postcss-loader: 7.0.2_upg3rk2kpasnbk27hkqapxaxfq
   postcss-preset-env: 7.8.3_postcss@8.4.19
-  prettier: 2.8.0
+  prettier: 2.8.1
   react-test-renderer: 18.2.0_react@18.2.0
   rimraf: 3.0.2
   simple-progress-webpack-plugin: 2.0.0_webpack@5.75.0
@@ -171,9 +171,9 @@ devDependencies:
   stylelint-order: 5.0.0_stylelint@14.16.0
   tailwindcss: 3.2.4_postcss@8.4.19
   terser-webpack-plugin: 5.3.6_webpack@5.75.0
-  ts-jest: 29.0.3_6e7mqrelncvn5j57uonhn3ff4i
-  ts-loader: 9.4.2_vfotqvx6lgcbf3upbs6hgaza4q
-  typescript: 4.9.3
+  ts-jest: 29.0.3_jav3n3okgvu6u2xhc6e4p2qzoi
+  ts-loader: 9.4.2_3fkjkrd3audxnith3e7fo4fnxi
+  typescript: 4.9.4
   url-loader: 4.1.1_p5dl6emkcwslbw72e37w4ug7em
   webpack: 5.75.0_webpack-cli@5.0.1
   webpack-bundle-analyzer: 4.7.0
@@ -1762,13 +1762,13 @@ packages:
       '@types/node': 14.18.32
       chalk: 4.1.2
       cosmiconfig: 7.1.0
-      cosmiconfig-typescript-loader: 4.1.1_eeasm2tuf3tuxy2cfn5zx3lcpm
+      cosmiconfig-typescript-loader: 4.1.1_bb5njjllvhi6b5n4wpon2yhayq
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1_5iiwcd3sc4kyglfvjmrogmdfsy
-      typescript: 4.9.3
+      ts-node: 10.9.1_6yr256pmli274zrjafonbeyefq
+      typescript: 4.9.4
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -2083,8 +2083,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@huxy/materials/0.0.9_react@18.2.0:
-    resolution: {integrity: sha512-lO3TOnTYwBvcD1eikGeqCXUBPme8m2RR9rZcIylt3ddrmXc6nQ1SdWBQSxRVsv8WC0MXWzab51au+dl+wAIpjw==}
+  /@huxy/materials/0.0.10_react@18.2.0:
+    resolution: {integrity: sha512-u3Nxlg+M5Ztgvy+Hf6nbnAEht/SiSEVY6ehXtz9GkWI96DShyx5Zgr7ucz/wqw2uOkZoI8m4gD4CNYxV0wNEeQ==}
     peerDependencies:
       react: '>=17.0.0'
     dependencies:
@@ -4076,7 +4076,7 @@ packages:
       vary: 1.1.2
     dev: true
 
-  /cosmiconfig-typescript-loader/4.1.1_eeasm2tuf3tuxy2cfn5zx3lcpm:
+  /cosmiconfig-typescript-loader/4.1.1_bb5njjllvhi6b5n4wpon2yhayq:
     resolution: {integrity: sha512-9DHpa379Gp0o0Zefii35fcmuuin6q92FnLDffzdZ0l9tVd3nEobG3O+MZ06+kuBvFTSVScvNb/oHA13Nd4iipg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -4087,8 +4087,8 @@ packages:
     dependencies:
       '@types/node': 14.18.32
       cosmiconfig: 7.1.0
-      ts-node: 10.9.1_5iiwcd3sc4kyglfvjmrogmdfsy
-      typescript: 4.9.3
+      ts-node: 10.9.1_6yr256pmli274zrjafonbeyefq
+      typescript: 4.9.4
     dev: true
 
   /cosmiconfig/7.1.0:
@@ -8645,8 +8645,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.0:
-    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
+  /prettier/2.8.1:
+    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -9979,7 +9979,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-jest/29.0.3_6e7mqrelncvn5j57uonhn3ff4i:
+  /ts-jest/29.0.3_jav3n3okgvu6u2xhc6e4p2qzoi:
     resolution: {integrity: sha512-Ibygvmuyq1qp/z3yTh9QTwVVAbFdDy/+4BtIQR2sp6baF2SJU/8CKK/hhnGIDY2L90Az2jIqTwZPnN2p+BweiQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -10010,11 +10010,11 @@ packages:
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.3.8
-      typescript: 4.9.3
+      typescript: 4.9.4
       yargs-parser: 21.1.1
     dev: true
 
-  /ts-loader/9.4.2_vfotqvx6lgcbf3upbs6hgaza4q:
+  /ts-loader/9.4.2_3fkjkrd3audxnith3e7fo4fnxi:
     resolution: {integrity: sha512-OmlC4WVmFv5I0PpaxYb+qGeGOdm5giHU7HwDDUjw59emP2UYMHy9fFSDcYgSNoH8sXcj4hGCSEhlDZ9ULeDraA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -10025,11 +10025,11 @@ packages:
       enhanced-resolve: 5.10.0
       micromatch: 4.0.5
       semver: 7.3.8
-      typescript: 4.9.3
+      typescript: 4.9.4
       webpack: 5.75.0_webpack-cli@5.0.1
     dev: true
 
-  /ts-node/10.9.1_5iiwcd3sc4kyglfvjmrogmdfsy:
+  /ts-node/10.9.1_6yr256pmli274zrjafonbeyefq:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -10055,7 +10055,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.9.3
+      typescript: 4.9.4
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -10134,8 +10134,8 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
     dev: true
 
-  /typescript/4.9.3:
-    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

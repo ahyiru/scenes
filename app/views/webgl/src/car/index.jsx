@@ -13,7 +13,7 @@ const areas = [
   {
     key: 'details',
     value: '#ffffff',
-    label: '座椅',
+    label: '纹路',
   },
   {
     key: 'glass',
@@ -44,7 +44,7 @@ const Index = props => {
         </div>)
       }
     </div>
-    <div ref={mountDom} />
+    <div ref={mountDom} style={{width: '100%', height: '100%'}} />
   </div>;
 };
 

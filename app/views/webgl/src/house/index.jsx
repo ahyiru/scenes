@@ -31,7 +31,7 @@ const Index = props => {
         </li>
       </ul>
     </div>
-    <div ref={mountDom} />
+    <div ref={mountDom} style={{width: '100%', height: '100%'}} />
   </div>;
 };
 

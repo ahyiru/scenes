@@ -107,7 +107,7 @@ const getGeometry = () => {
 };
 
 const startScene = (mountDom = document.body) => {
-  const {width, height} = getViewportSize();
+  const {width, height} = getViewportSize(mountDom);
   const renderer = new THREE.WebGLRenderer({antialias: true});
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 500);
@@ -259,7 +259,7 @@ const startScene = (mountDom = document.body) => {
   };
 
   const onResize = () => {
-    const {width, height} = getViewportSize();
+    const {width, height} = getViewportSize(mountDom);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
@@ -278,8 +278,8 @@ const startScene = (mountDom = document.body) => {
   const start = () => {
     setConfigs();
     animate();
-    document.addEventListener('resize', onResize, false);
-    return () => document.removeEventListener('resize', onResize, false);
+    window.addEventListener('resize', onResize, false);
+    return () => window.removeEventListener('resize', onResize, false);
   };
   return start();
 };

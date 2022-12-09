@@ -12,7 +12,7 @@ import ferrariPng from './src/ferrari.png';
 import ferrariGlb from './src/ferrari.glb';
 
 const startScene = (areaInfo, mountDom = document.body) => {
-  const {width, height} = getViewportSize();
+  const {width, height} = getViewportSize(mountDom);
   const renderer = new THREE.WebGLRenderer({antialias: true});
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
@@ -29,7 +29,7 @@ const startScene = (areaInfo, mountDom = document.body) => {
     renderer.toneMappingExposure = 0.85;
     mountDom.appendChild(renderer.domElement);
 
-    camera.position.set(4.25, 1.4, - 4.5);
+    camera.position.set(4.25, 1.4, -4.5);
 
     // controls.rotateSpeed = -1.0;
     // controls.enableZoom = true;
@@ -116,7 +116,7 @@ const startScene = (areaInfo, mountDom = document.body) => {
   };
 
   const onResize = () => {
-    const {width, height} = getViewportSize();
+    const {width, height} = getViewportSize(mountDom);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
@@ -138,8 +138,8 @@ const startScene = (areaInfo, mountDom = document.body) => {
   const start = () => {
     setConfigs();
     animate();
-    document.addEventListener('resize', onResize, false);
-    return () => document.removeEventListener('resize', onResize, false);
+    window.addEventListener('resize', onResize, false);
+    return () => window.removeEventListener('resize', onResize, false);
   };
   return start();
 };

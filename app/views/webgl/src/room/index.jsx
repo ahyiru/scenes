@@ -7,7 +7,7 @@ const Index = props => {
   useEffect(() => {
     return startScene(mountDom.current);
   }, []);
-  return <div ref={mountDom} />;
+  return <div ref={mountDom} style={{width: '100%', height: '100vh'}} />;
 };
 
 export default Index;

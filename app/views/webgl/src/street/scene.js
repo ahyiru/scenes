@@ -56,7 +56,7 @@ const createStreetSide = (scene, x) => {
 };
 
 const startScene = (mountDom = document.body) => {
-  const {width, height} = getViewportSize();
+  const {width, height} = getViewportSize(mountDom);
   const renderer = new THREE.WebGLRenderer();
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 8000);
@@ -86,7 +86,7 @@ const startScene = (mountDom = document.body) => {
   };
 
   const onResize = () => {
-    const {width, height} = getViewportSize();
+    const {width, height} = getViewportSize(mountDom);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
@@ -101,11 +101,11 @@ const startScene = (mountDom = document.body) => {
   const start = () => {
     init();
     animate();
-    document.addEventListener('resize', onResize, false);
-    document.addEventListener('keydown', e => currentKey = e.which, false);
-    document.addEventListener('keyup', e => currentKey = null, false);
+    window.addEventListener('resize', onResize, false);
+    window.addEventListener('keydown', e => currentKey = e.which, false);
+    window.addEventListener('keyup', e => currentKey = null, false);
     return () => {
-      document.removeEventListener('resize', onResize, false);
+      window.removeEventListener('resize', onResize, false);
     };
   };
   return start();

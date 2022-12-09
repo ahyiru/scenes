@@ -16,7 +16,7 @@ const Index = props => {
       <span>Right - 向右</span>
       <span>Left - 向左</span>
     </div>
-    <div ref={mountDom} />
+    <div ref={mountDom} style={{width: '100%', height: '100%'}} />
   </div>;
 };
 
