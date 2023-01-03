@@ -7,7 +7,6 @@ import FullPage from '@app/components/fullScreen';
 import CustomCollapse from '@app/components/customCollapse';
 import Search from '@app/components/search';
 
-import getLang from '@app/utils/getLang';
 import {logout} from '@app/utils/utils';
 
 import GithubIcon from '@app/components/githubIcon';
@@ -83,6 +82,7 @@ export const leftNav = () => {
     },
     {
       key: 'wechat',
+      title: 'wechat',
       icon: 'ico-heart',
       arrowDir: 'lt',
       ChildRender: item => (
@@ -99,8 +99,7 @@ export const leftNav = () => {
     },
   ];
 };
-export const rightNav = () => {
-  const language = getLang();
+export const rightNav = language => {
   const user = userInfoStore.getState();
   const right = getIntls('nav.right', {});
   return [
@@ -140,7 +139,7 @@ export const rightNav = () => {
       key: 'language',
       name: right?.[language] ?? '语言',
       Custom: () => (
-        <a>
+        <a title={right?.[language] ?? '语言'}>
           <div className="icon">
             <img src={langList.find(({key}) => key === language)?.icon} alt={language} />
           </div>
@@ -167,7 +166,7 @@ export const rightNav = () => {
     },
     {
       key: 'fullscreen',
-      Custom: () => <a><FullPage /></a>,
+      Custom: () => <a title="fullscreen"><FullPage /></a>,
     },
     {
       key: 'search',
